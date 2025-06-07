@@ -21,3 +21,12 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS courses (
     instructor TEXT
 )
                 ''')
+
+
+cursor.execute('''CREATE TABLE IF NOT EXISTS student_course (
+    student_id INTEGER,
+    course_id INTEGER
+    FOREING KEY (student_id) REFERENCES students(id)
+    FOREING KEY (cource_id) REFERENCES students(courseid)
+    PRIMARY KEY (student_id, course_id)
+)''')
